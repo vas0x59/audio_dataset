@@ -6,8 +6,8 @@ import xml.etree.ElementTree as ET
 import cv2
 from imutils import paths
 
-path = "video"
-path_out = "images"
+path = "video_out"
+path_out = "images_out"
 
 videoPaths = sorted(list(paths.list_files(path)))
 print(videoPaths)
@@ -27,7 +27,7 @@ for videoPath in videoPaths:
         ret, image = cap.read()
         if ret == False:
             break
-        if i % 5 == 0:
+        if i % 2 == 0:
             # print(videoPath, i)
             label = videoPath.split(os.path.sep)[-2]
             name = videoPath.split(os.path.sep)[-1].split(".")[0]
